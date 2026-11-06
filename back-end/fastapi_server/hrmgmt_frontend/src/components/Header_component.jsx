@@ -1,10 +1,10 @@
-import{Link,useLocation} from 'react-router-dom'
+import{Link,useLocation,useNavigate} from 'react-router-dom'
 
 function Header_component() {
     useLocation() //reload the menubar
 
     let currentuser=JSON.parse(localStorage.getItem("currentuser") || "null")
-    let navigate=userNavigate()
+    let navigate=useNavigate()
     let handleLogout=(e)=>{
         localStorage.removeItem("currentuser")
         navigate("/login")
